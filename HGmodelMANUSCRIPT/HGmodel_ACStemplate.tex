@@ -1270,20 +1270,28 @@ NAMD was developed by the Theoretical and Computational Biophysics Group in the
 This model is similar to the Lee-CHARMM36-UA model with a few  differences.
 A hydrated bilayer consisting of 128 DLPC lipids and 3840 water
 molecules is described by a model derived from the CHARMM27-UA model by H\'enin et al.~\cite{henin08}.
-
 The distribution into all-atom  (AA) and united-atom (UA) parts within the lipids is the same
 as in the original CHARMM27-UA model by H\'enin et al.~\cite{henin08}.  
-This distribution differs from the one by Lee-C36-UA because  in Botan's model, C22 and C32 and 
-their hydrogens are merged into  united atoms, whereas in Lee's model their hydrogens are described explicitely.
-The  united-atom Berger model ~\cite{berger97} was used for the tails and the UA-AA interactions as in Ref. ~\citenum{henin08}. 
-The difference between this model and the original one by H\'enin~\cite{henin08} is the replacement of the 
+This UA/AA distribution differs from the one in Lee-CHARMM36-UA 
+solely for the first methylene group of each acyl chain
+(C22 and C32 in CHARMM36 topology):  here their hydrogens are merged into united atoms, 
+whereas in Lee's model their hydrogens are described explicitely.
+The  united-atom Berger model ~\cite{berger97} was used for the tails 
+and the UA-AA interactions as in Ref. ~\citenum{henin08}. 
+The difference between this model and the original one
+by H\'enin~\cite{henin08} is the replacement of the 
 AA parameters for the heads by  the parameters of the all-atom
- CHARMM36 force-field~\cite{klauda10}. Contrarily to the model by Lee et al.~\cite{lee14}, no reparametrization was done.
+CHARMM36 force-field~\cite{klauda10}. Contrarily to the 
+model by Lee et al.~\cite{lee14}, no reparametrization was done.
 
-The non-bonded interactions are calculated using an atom-based switching function with short and long cut-offs of 0.8 and 1.2~nm. 
-Long range electrostatic interactions are implemented using the particle-particle particle-mesh solver with a relative accuracy of $10^{-4}$. The system 
-is first equilibrated for 30~ns in the NP$\gamma$T ensemble (Nos\'{e}--Hoover~\cite{nose84,hoover85} style thermostat and barostat with anisotropic pressure coupling) 
-at 323~K and 1~bar with timestep of 1~fs. The following 20~ns of dynamics are taken for calculation of configurational averages. 
+The non-bonded interactions are calculated using an atom-based switching function 
+with short and long cut-offs of 0.8 and 1.2~nm. 
+Long range electrostatic interactions are implemented using the particle-particle 
+particle-mesh solver with a relative accuracy of $10^{-4}$. The system 
+is first equilibrated for 30~ns in the NP$\gamma$T ensemble 
+(Nos\'{e}--Hoover~\cite{nose84,hoover85} style thermostat and barostat with anisotropic pressure coupling) 
+at 323~K and 1~bar with timestep of 1~fs. The following 20~ns of dynamics 
+are taken for calculation of configurational averages. 
 Simulations were carried out by using the LAMMPS package~\cite{plimpton95}. %( http://doi.org/10.1006/jcph.1995.1039 )., the input files are available ( http://dx.doi.org/10.5281/zenodo.13821 ).
 
 \subsection{Dihedral angle distributions as a function of cholesterol in CHARMM36}
